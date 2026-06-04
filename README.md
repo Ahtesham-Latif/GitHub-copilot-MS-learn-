@@ -1,16 +1,63 @@
-# Getting Started with GitHub Copilot
+# Mergington High School Activities
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+A small FastAPI and static frontend project for managing extracurricular activities at Mergington High School.
 
-Hey Ahtesham-Latif!
+## Project overview
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+This repository contains a simple web app that lets students browse school activities and sign up using their `@mergington.edu` email address. The backend is built with FastAPI, and the frontend is a lightweight static UI served from the `src/static` folder.
 
-Remember, it's self-paced so feel free to take a break! ☕️
+## How I started
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/Ahtesham-Latif/GitHub-copilot-MS-learn-/issues/1)
+- Opened the repository and reviewed the existing files in `src/`
+- Found the main FastAPI app in `src/app.py`
+- Confirmed the app entry point was under `src` and not at the repo root
+- Checked the static frontend files in `src/static/`
+- Verified the app imports correctly with `python -c "import app"` from `src`
+
+## What I did
+
+- Added stronger backend validation for signup email addresses
+  - Only accepts student emails ending with `@mergington.edu`
+  - Rejects invalid email formats
+  - Prevents duplicate signups for the same activity
+  - Prevents signing up when the activity is full
+- Improved the frontend signup flow
+  - Added client-side email validation for `@mergington.edu`
+  - Displayed clear success and error messages
+  - Updated the UI to show activity availability and full status
+  - Automatically refreshed the activity list after signup
+- Enhanced the app structure and documentation
+  - Added direct execution support to `src/app.py`
+  - Updated the root README with clear project information and usage instructions
+
+## Outcomes
+
+- The app now rejects invalid or non-school emails
+- Students can only sign up with their official Mergington email
+- Activities show how many spots remain and whether they are full
+- Signups are prevented when duplicate or full
+- The repo is committed and pushed to `main`
+
+## How to run the project
+
+```bash
+cd /workspaces/GitHub-copilot-MS-learn-/src
+uvicorn app:app --reload
+```
+
+Then open:
+
+- `http://localhost:8000/docs`
+- `http://localhost:8000/static/index.html`
+
+## Files changed
+
+- `src/app.py`
+- `src/static/index.html`
+- `src/static/app.js`
+- `src/static/styles.css`
 
 ---
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+&copy; 2026 Mergington High School Activities Demo
 
