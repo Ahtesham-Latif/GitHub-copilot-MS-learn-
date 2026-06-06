@@ -168,7 +168,24 @@ def signup_for_activity(activity_name: str, signup: SignupRequest):
         "message": f"Signed up {signup.email} for {activity_name}",
         "activity": activity.summary(),
     }
+# For deleteting a signup, we could add an endpoint like this:
+@app.delete("/activities/{activity_name}/signup")
+def unregister_from_activity(activity_name: str, signup: SignupRequest):
+    if activity_name not in activities:
+        raise HTTPException(status_code=404, detail="Activity not found")
 
+    activity = activities[activity_name]
+
+    if signup.email not in activity.participants:
+        raise HTTPException(status_code=400, detail="This student is not signed up for this activity")
+
+    # Remove the student from the list
+    activity.participants.remove(signup.email)
+    
+    return {
+        "message": f"Unregistered {signup.email} from {activity_name}",
+        "activity": activity.summary(),
+    }
 
 if __name__ == "__main__":
     import uvicorn
