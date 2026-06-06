@@ -32,6 +32,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const activityCard = document.createElement("div");
         activityCard.className = "activity-card";
 
+        // Generate the participants list HTML
+        let participantsHtml = '<ul class="participants-list">';
+        if (activity.participants && activity.participants.length > 0) {
+          activity.participants.forEach((participant) => {
+            participantsHtml += `
+              <li>
+                ${participant} 
+                <span class="delete-icon" data-activity="${activity.name}" data-email="${participant}" title="Unregister">🗑️</span>
+              </li>`;
+          });
+        } else {
+          participantsHtml += '<li>No participants yet</li>';
+        }
+        participantsHtml += '</ul>';
+
         activityCard.innerHTML = `
           <div class="activity-header">
             <h4>${activity.name}</h4>
@@ -42,6 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${activity.description}</p>
           <p><strong>Schedule:</strong> ${activity.schedule}</p>
           <p><strong>Students enrolled:</strong> ${activity.participant_count}</p>
+          <div class="participants-section">
+            <strong>Participants:</strong>
+            ${participantsHtml}
+          </div>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -57,6 +76,39 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching activities:", error);
     }
   }
+
+  // Handle participant unregistration (Delete icon click)
+  activitiesList.addEventListener("click", async (event) => {
+    if (event.target.classList.contains("delete-icon")) {
+      const activityName = event.target.getAttribute("data-activity");
+      const email = event.target.getAttribute("data-email");
+
+      try {
+        const response = await fetch(
+          `/activities/${encodeURIComponent(activityName)}/signup`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+          }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+          showMessage(`Unregistered ${email} successfully.`, "success");
+          await fetchActivities();
+        } else {
+          showMessage(result.detail || "An error occurred.", "error");
+        }
+      } catch (error) {
+        showMessage("Failed to unregister. Check your connection.", "error");
+        console.error("Error unregistering:", error);
+      }
+    }
+  });
 
   signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
