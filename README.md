@@ -1,63 +1,37 @@
-# Mergington High School Activities
+<div align="center">
 
-A small FastAPI and static frontend project for managing extracurricular activities at Mergington High School.
+# 🎉 Congratulations Ahtesham-Latif! 🎉
 
-## Project overview
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
-This repository contains a simple web app that lets students browse school activities and sign up using their `@mergington.edu` email address. The backend is built with FastAPI, and the frontend is a lightweight static UI served from the `src/static` folder.
+### 🌟 You've successfully completed the exercise! 🌟
 
-## How I started
+## 🚀 Share Your Success!
 
-- Opened the repository and reviewed the existing files in `src/`
-- Found the main FastAPI app in `src/app.py`
-- Confirmed the app entry point was under `src` and not at the repo root
-- Checked the static frontend files in `src/static/`
-- Verified the app imports correctly with `python -c "import app"` from `src`
+**Show off your new skills and inspire others!**
 
-## What I did
+<a href="https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20%22Getting%20Started%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FAhtesham-Latif%2FGitHub-copilot-MS-learn-%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20X-1da1f2?style=for-the-badge&logo=x&logoColor=white" alt="Share on X" />
+</a>
+<a href="https://bsky.app/intent/compose?text=I%20just%20completed%20the%20%22Getting%20Started%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FAhtesham-Latif%2FGitHub-copilot-MS-learn-%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20Bluesky-0085ff?style=for-the-badge&logo=bluesky&logoColor=white" alt="Share on Bluesky" />
+</a>
+<a href="https://www.linkedin.com/feed/?shareActive=true&text=I%20just%20completed%20the%20%22Getting%20Started%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FAhtesham-Latif%2FGitHub-copilot-MS-learn-%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Share on LinkedIn" />
+</a>
 
-- Added stronger backend validation for signup email addresses
-  - Only accepts student emails ending with `@mergington.edu`
-  - Rejects invalid email formats
-  - Prevents duplicate signups for the same activity
-  - Prevents signing up when the activity is full
-- Improved the frontend signup flow
-  - Added client-side email validation for `@mergington.edu`
-  - Displayed clear success and error messages
-  - Updated the UI to show activity availability and full status
-  - Automatically refreshed the activity list after signup
-- Enhanced the app structure and documentation
-  - Added direct execution support to `src/app.py`
-  - Updated the root README with clear project information and usage instructions
+### 🎯 What's Next?
 
-## Outcomes
+**Keep the momentum going!**
 
-- The app now rejects invalid or non-school emails
-- Students can only sign up with their official Mergington email
-- Activities show how many spots remain and whether they are full
-- Signups are prevented when duplicate or full
-- The repo is committed and pushed to `main`
+[![](https://img.shields.io/badge/Return%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/Ahtesham-Latif/GitHub-copilot-MS-learn-/issues/1)
+[![GitHub Skills](https://img.shields.io/badge/Explore%20GitHub%20Skills-000000?style=for-the-badge&logo=github&logoColor=white)](https://learn.github.com/skills)
 
-## How to run the project
+*There's no better way to learn than building things!* 🚀
 
-```bash
-cd /workspaces/GitHub-copilot-MS-learn-/src
-uvicorn app:app --reload
-```
-
-Then open:
-
-- `http://localhost:8000/docs`
-- `http://localhost:8000/static/index.html`
-
-## Files changed
-
-- `src/app.py`
-- `src/static/index.html`
-- `src/static/app.js`
-- `src/static/styles.css`
+</div>
 
 ---
 
-&copy; 2026 Mergington High School Activities Demo
+&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
